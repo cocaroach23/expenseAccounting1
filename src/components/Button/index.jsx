@@ -1,8 +1,8 @@
 function Button(props) {
-    const { title, handleClick } = props
+    const { title, handleClick, type } = props
     
     return(
-        <button onClick={handleClick} >
+        <button type={type} onClick={event => handleClick(event)} >
             {title}
         </button>
     )

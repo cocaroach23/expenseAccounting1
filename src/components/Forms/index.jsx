@@ -1,22 +1,35 @@
 import { useState } from "react"
 import Button from "../Button"
 import React from 'react'
-import Select from 'react-select'
+import ReactSelect from "react-select"
 
-const Forms = () => {
+const Forms = ({addForm}) => {
+    
 
     const [cash, setCash] = useState('')
-    const [options, setOptions] = useState('')
-    const options = [
+    const [date, setDate] = useState('')
+    const [selectedOptions, setSelectedOptions] = useState('')
+    const category = [
         {value:"productForm", label:'Продукты'},
         {value:"cloth", label:'Одежда'},
         {value:"health", label:'Здоровье'},
         {value:"leisure", label:'Развлечения'},
         {value:"credit", label:'Кредит'}
     ]
-    const MyComponent = () =>(
-        <Select options={options} />//не уверен в этой функции
-    )
+    const handleChange = selectedPtions => {
+        selectedOptions(selectedOptions)
+    }
+
+    const handleClick = event => {  
+        event.preventDefault() 
+        const form = {
+            category,
+            date,
+            cash
+        }
+
+        addForm(form)
+    }
 
     return (
         <div className="max-w-sm ms-10 my-10 gap-y-4 flex">
@@ -24,39 +37,45 @@ const Forms = () => {
             <form>
                 <div>
                     <label for="category" className="col-span-1"></label>
-                    <input onChange={(event, target, value) =>{
-                        setOptions(event, target, value)
-                    }}/>
-                    {/*<select name="category" id="category">
-                        <option value="productForm">Продукты</option>
-                        <option value="cloth">Одежда</option>
-                        <option value="health">Здоровье</option>
-                        <option value="leisure">Развлечения</option>
-                        <option value="credit">Кредит</option>
-                    </select>*/}
+                    <ReactSelect key={category} value={selectedOptions} onChange={handleChange} options={category} />
                     
 
                 </div>
                 <div>
                     <label for="date">Дата покупки</label>
-                    <input type="date" id="date" name="date" />
+                    <input 
+                        onChange={(event) => setDate(event.target.value)}
+                        type="date" 
+                        id="date" 
+                        name="date" />
                 </div>
 
                 <div>
-                    <label className="col-span-1">Сумма</label>
-                    <input onChange={(event, target, value) => {
-                        setCach(event, target, value)
-                    }}
+                    <label for="cash" className="col-span-1">Сумма</label>
+                    <input name="cash" 
+                    onChange={(event) => {setCash(event.target.value)}}
+                    
 
-                        value={cash} name="cash"
+                        value={cash} 
                         type="number"
                         className="col-span-2 border border-solid border-black-400 rounded"
                     />
                 </div>
 
-                <Button title="Добавить" handleClick={handleClick} />
+                <Button title="Добавить" handleClick={handleClick} type="submit" />
             </form>
+           { /*<div>
+                {Forms.map((form) =>{
+                    return(<div>
+                        <p>{form.category}</p>
+                        <p>{form.date}</p>
+                        <p>{form.cash}</p>
+                        
+                    </div>)
+                })}
+            </div>*/}
         </div>
+        
     )
 }
 
