@@ -5,7 +5,7 @@ import ReactSelect from "react-select"
 
 const Forms = ({addForm}) => {
     
-
+    const [forms, setForms] = useState('')
     const [cash, setCash] = useState('')
     const [date, setDate] = useState('')
     const [selectedOptions, setSelectedOptions] = useState('')
@@ -28,8 +28,12 @@ const Forms = ({addForm}) => {
             cash
         }
 
-        addForm(form)
+        addPurchases(OldPurchases)
     }
+
+    /*const addForm = (form) => {         //ERROR in [eslint] src\components\App\index.jsx Line 7:5:  'setForms' is not defined  no-undef
+        setForms([...Forms,form])
+      }*/
 
     return (
         <div className="max-w-sm ms-10 my-10 gap-y-4 flex">
