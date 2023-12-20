@@ -1,42 +1,45 @@
 import './App.css';
-import Forms from 'components/Forms';
+import LastPurchases from '../LastPurchases';
+import uuid4 from 'uuid4';
+import { useState } from 'react';
+
 
 function App() {
-  const [oldPurchases, useState] = useState([
+  const [oldPurchases, setOldPurchase] = useState([
     {
-      id:1,
-      category:'productForm',
+      id: uuid4(),
+      category:'Продукты',
       date:'11/12/2023',
-      cash:'300',
+      cash: 300,
     },
     {
-      id:2,
-      category:'cloth',
+      id: uuid4(),
+      category:'Одежда',
       date:'05/04/2023',
-      cash:'1500',
+      cash: 1500,
     },
     {
-      id:3,
-      category:'health',
+      id: uuid4(),
+      category:'Здоровье',
       date:'27/09/2023',
-      cash:'865',
+      cash: 865,
     },
     {
-      id:4,
-      category:'leisure',
+      id: uuid4(),
+      category:'Кредит',
       date:'01/01/2023',
-      cash:'7000',
+      cash: 7000,
     }
 
   ])
 
-  const addPurchases = (OldPurchases) => {
-    OldPurchases([...oldPurchases,Forms])
+  const addPurchases = (newPurchases) => {
+    setOldPurchase([...oldPurchases, newPurchases])
   }
   
   return (
     <div>
-      <Forms  />
+      <LastPurchases addPurchases={addPurchases} oldPurchases={oldPurchases} />
       
     </div>
   );
