@@ -36,10 +36,15 @@ function App() {
   const addPurchases = (newPurchases) => {
     setOldPurchase([...oldPurchases, newPurchases])
   }
+
+  const deletePurchase = (id) => {
+    const filtredPurchases = oldPurchases.filter(purchase => purchase.id !== id)
+    setOldPurchase(filtredPurchases)
+  }
   
   return (
     <div>
-      <LastPurchases addPurchases={addPurchases} oldPurchases={oldPurchases} />
+      <LastPurchases key={purchase.id} addPurchases={addPurchases} oldPurchases={oldPurchases} deletePurchase={deletePurchase} />
       
     </div>
   );

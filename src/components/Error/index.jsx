@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import { Dialog } from '@headlessui/react'
+import { useState, Fragment } from 'react'
+import { Dialog, Transition } from '@headlessui/react'
 import Button from 'components/Button'
 
 const Error = () => {
@@ -10,9 +10,7 @@ const Error = () => {
     setIsOpen(false)
   }
 
-  function openModal() {
-    setIsOpen(true)
-  }
+  
     return(
         <>
             

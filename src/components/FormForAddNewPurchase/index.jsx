@@ -2,6 +2,7 @@ import { useState } from "react"
 import Button from "../Button"
 import React from "react"
 import Error from "../Error" 
+import ReactSelect from "react-select"
 
 const FormForAddNewPurchase = ({addPurchases}) => {
     const categories = [
@@ -15,7 +16,6 @@ const FormForAddNewPurchase = ({addPurchases}) => {
     const[selectedCategory, setSelectedCategory] = useState(null)
     const [cash, setCash] = useState('')
     const [date, setDate] = useState('')
-    const [selectedOptions, setSelectedOptions] = useState(null)
     const [error, setError] = useState(false)
     
     

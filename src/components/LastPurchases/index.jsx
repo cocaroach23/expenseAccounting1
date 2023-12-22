@@ -2,7 +2,7 @@ import FormForAddNewPurchase from 'components/FormForAddNewPurchase'
 import React from 'react'
 
 
-const LastPurchases = ({ addPurchases, oldPurchases }) => {
+const LastPurchases = ({ addPurchases, oldPurchases, deletePurchase }) => {
      
 
   
@@ -15,7 +15,10 @@ const LastPurchases = ({ addPurchases, oldPurchases }) => {
                         <p>{purchase.category}</p>
                         <p>{purchase.date}</p>
                         <p>{purchase.cash}</p>
+
+                        <a className='hover:underline cursor-pointer' onClick={() => deletePurchase(purchase.id)}>Удалить</a>
                     </div>
+                    
                 ])}
             </div>
             <FormForAddNewPurchase addPurchases={addPurchases}/>
