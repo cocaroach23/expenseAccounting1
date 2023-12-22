@@ -44,7 +44,7 @@ function App() {
   
   return (
     <div>
-      <LastPurchases key={purchase.id} addPurchases={addPurchases} oldPurchases={oldPurchases} deletePurchase={deletePurchase} />
+      <LastPurchases key={oldPurchases.id} addPurchases={addPurchases} oldPurchases={oldPurchases} deletePurchase={deletePurchase} />
       
     </div>
   );
