@@ -46,34 +46,35 @@ const FormForAddNewPurchase = ({addPurchases}) => {
     }
 
     return (
-        <div className="max-w-sm ms-10 my-10 gap-y-4 flex">
-            <h2 className="font-bold text-xl">Учёт расходов</h2>
-            <form>
-                <div>
-                    <label for="category" className="col-span-1"></label>
-                    <ReactSelect value={selectedCategory} onChange={handleChange} options={categories} />
-                    
+        <div className="m-auto flex justify-between">
+            
+            <form className="flex pt-6">
+                <div className="flex gap-12 justify-between">
+                    <div>
+                        <label for="category" className="col-span-1"></label>
+                        <ReactSelect value={selectedCategory} onChange={handleChange} options={categories} />
+                        
 
-                </div>
-                <div>
-                    <label for="date">Дата покупки</label>
-                    <input 
-                        onChange={(event) => setDate(event.target.value)}
-                        type="date" 
-                        id="date" 
-                        name="date" />
-                </div>
+                    </div>
+                    <div>
+                        <label for="date">Дата покупки</label>
+                        <input 
+                            onChange={(event) => setDate(event.target.value)}
+                            type="date" 
+                            id="date" 
+                            name="date" />
+                    </div>
 
-                <div>
-                    <label for="cash" className="col-span-1">Сумма</label>
-                    <input name="cash" 
-                    onChange={(event) => setCash(event.target.value)}
-                        value={cash} 
-                        type="number"
-                        className="col-span-2 border border-solid border-black-400 rounded"
-                    />
+                    <div>
+                        <label for="cash" className="col-span-1">Сумма</label>
+                        <input name="cash" 
+                        onChange={(event) => setCash(event.target.value)}
+                            value={cash} 
+                            type="number"
+                            className="col-span-2 border border-solid border-black-400 rounded"
+                        />
+                    </div>
                 </div>
-
                 <Button title="Добавить" handleClick={handleClick} type="button" />
             </form>
            {error && <Error />}
