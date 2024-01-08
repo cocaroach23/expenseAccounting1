@@ -3,10 +3,10 @@ import React from "react"
 import { useState } from "react"
 
 
-const generalResults = ({oldPurchases}) => {
+const generalResults = ({newPurchase}) => {
 
     
-    const generalExpenses = newPurchase.reduce((acc , oldPurchase, i , arr) => {
+    const generalExpenses = newPurchase.reduce((acc , newPurchase, i , arr) => {
         console.log(acc);
         return acc + oldPurchase.cash;
 }, 0);
