@@ -3,13 +3,13 @@ import React from "react"
 import { useState } from "react"
 
 
-const generalResults = () => {
+const generalResults = ({oldPurchases}) => {
 
-    const initialValue = 0;
-    const generalExpenses = oldPurchase.reduce(
-        (accumulator , currentValue) => accumulator + currentValue.cash,
-        initialValue,
-    );
+    
+    const generalExpenses = newPurchase.reduce((acc , oldPurchase, i , arr) => {
+        console.log(acc);
+        return acc + oldPurchase.cash;
+}, 0);
     console.log(generalExpenses);
     
 
