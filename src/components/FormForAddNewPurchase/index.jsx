@@ -70,7 +70,7 @@ const FormForAddNewPurchase = ({addPurchases}) => {
                         <input name="cash" 
                         onChange={(event) => setCash(event.target.value)}
                             value={cash} 
-                            type="number"
+                            type="text"
                             className="col-span-2 border border-solid border-black-400 rounded"
                         />
                     </div>

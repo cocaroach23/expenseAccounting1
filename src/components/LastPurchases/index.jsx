@@ -2,13 +2,15 @@ import FormForAddNewPurchase from 'components/FormForAddNewPurchase'
 import React from 'react'
 
 
-const LastPurchases = ({ addPurchases, oldPurchases, deletePurchase }) => {
+
+const LastPurchases = ({ addPurchases, oldPurchases, deletePurchase, generalExpenses }) => {
      
 
   
     return (
         <div className="gap-y-4 flex flex-col m-auto max-w-5xl">
             <h2 className="font-bold text-xl text-center">Учёт расходов</h2>
+            <p>Общая сумма: {generalExpenses}</p>
             <div className="bg-gray-100 flex flex-col-reverse">
       
             <div>
