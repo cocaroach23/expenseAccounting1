@@ -45,6 +45,12 @@ const FormForAddNewPurchase = ({addPurchases}) => {
                
     }
 
+    const onChange = (event) => {
+        const oldValue = event.target.value
+        const newValue = oldValue.replace(/\D+/, '')
+        setCash(newValue)
+    }
+
     return (
         <div className="m-auto flex justify-between">
             
@@ -68,7 +74,7 @@ const FormForAddNewPurchase = ({addPurchases}) => {
                     <div>
                         <label for="cash" className="col-span-1">Сумма</label>
                         <input name="cash" 
-                        onChange={(event) => setCash(event.target.value)}
+                        onChange={onChange}
                             value={cash} 
                             type="text"
                             className="col-span-2 border border-solid border-black-400 rounded"
