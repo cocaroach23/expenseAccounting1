@@ -4,6 +4,7 @@ import uuid4 from 'uuid4';
 import { useState } from 'react';
 import { compareAsc, format } from "date-fns";
 import { ru } from 'date-fns/locale'
+import barChart from 'components/BarChart';
 
 
 function App() {
@@ -52,7 +53,7 @@ function App() {
     <div>
       <p>Общая сумма: {generalExpenses}</p>
       <LastPurchases key={oldPurchases.id} addPurchases={addPurchases} oldPurchases={oldPurchases} deletePurchase={deletePurchase} />
-      
+      <barChart />
     </div>
   );
 }
