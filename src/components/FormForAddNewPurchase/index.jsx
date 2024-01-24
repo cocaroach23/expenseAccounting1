@@ -3,6 +3,8 @@ import Button from "../Button"
 import React from "react"
 import Error from "../Error" 
 import ReactSelect from "react-select"
+import { ru } from 'date-fns/locale'
+import { format } from "date-fns";
 
 const FormForAddNewPurchase = ({addPurchases}) => {
     const categories = [
@@ -30,9 +32,12 @@ const FormForAddNewPurchase = ({addPurchases}) => {
 
             setError(true)
         } else {
+
+            const formatDate = format(new Date(date), 'd MMMM yyyy', {locale: ru})
+
             const newPurchase = {
                 category: selectedCategory.value,
-                date: date,
+                date: formatDate,
                 cash: cash
             }
 

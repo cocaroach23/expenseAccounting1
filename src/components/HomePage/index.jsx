@@ -5,8 +5,8 @@ const HomePage = ( { generalExpenses } ) =>{
 
     return (
         <div>
-        <div className="my-24 text-lg text-center">Начальная страница</div>
-        <p>Общая сумма: {generalExpenses}</p>
+        <div className="pt-24 text-center text-5xl">Добро пожаловать!</div>
+        
         </div>
     )
 }

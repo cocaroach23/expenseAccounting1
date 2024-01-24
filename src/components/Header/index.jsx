@@ -1,16 +1,19 @@
-import Button from "components/Button"
 import { Link } from "react-router-dom"
 import React from "react"
 
 const Header = () => {
 
     return(
-        <header className="font-semibold text-xl">
+        <header className="font-semibold text-xl py-7 bg-purple-800 text-amber-200">
             <div className="max-w-screen flex justify-between mx-auto px-10">
                 <nav className="flex gap-8 justify-center items-center">
-                    <link to='/OldPurchases'>
+                    <Link to='/HomePage'>
+                        Главная страница
+                    </Link>
+                    
+                    <Link to='/OldPurchases'>
                         Учёт расходов
-                    </link>
+                    </Link>
                 </nav>
             </div>
 
