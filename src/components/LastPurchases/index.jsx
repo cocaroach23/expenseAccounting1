@@ -10,16 +10,18 @@ const LastPurchases = ({ addPurchases, oldPurchases, deletePurchase, generalExpe
     return (
       <div className="gap-y-4 flex flex-col m-auto max-w-5xl">
             <h2 className="font-bold text-xl text-center">Учёт расходов</h2>
-            <p>Общая сумма: {generalExpenses}</p>
-            <div className="bg-gray-100 flex flex-col-reverse">
+            <p className='text-center text-5xl text-purple-600'>Общая сумма: {generalExpenses} руб.</p>
+
+            <FormForAddNewPurchase addPurchases={addPurchases}/>
+            <div className="bg-gray-100 flex flex-wrap justify-start">
       
-            <div >
+            
                 {oldPurchases.map((purchase) =>[
-                    <div className="relative px-4 py-16 mx-auto sm:max-w-xl lg:max-w-screen-xl md:px-24 ">
+                    
         
-                    <div className="flex flex-co relative  ">
-                      <div className="flex flex-col w-1/4 justify-between overflow-hidden text-left transition-shadow duration-200 bg-white rounded shadow-xl group hover:shadow-2xl">
-                        <div className="p-5"  key={purchase.id}>
+                    <div key={purchase.id} className="flex w-1/4 p-4 ">
+                      <div className="flex flex-col justify-between overflow-hidden text-left transition-shadow duration-200 bg-white rounded shadow-xl group hover:shadow-2xl">
+                        <div className="p-5">
                           
                           <p className="mb-2 font-bold">{purchase.category}</p>
                           <p className="text-sm leading-5 text-gray-900">
@@ -33,7 +35,7 @@ const LastPurchases = ({ addPurchases, oldPurchases, deletePurchase, generalExpe
                       </div>
                       
                     </div>
-                  </div>
+                  
                 
                     
 
@@ -41,8 +43,8 @@ const LastPurchases = ({ addPurchases, oldPurchases, deletePurchase, generalExpe
                     
                     
                 ])}
-            </div>
-            <FormForAddNewPurchase addPurchases={addPurchases}/>
+            
+            
             </div>
       </div>
         

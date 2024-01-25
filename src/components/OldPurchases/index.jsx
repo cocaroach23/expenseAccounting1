@@ -50,9 +50,9 @@ const OldPurchases =  () => {
 
     return(
         <div>
-            <p>Общая сумма: {generalExpenses}</p>
-                <Example />
-                <LastPurchases key={oldPurchases.id} addPurchases={addPurchases} oldPurchases={oldPurchases} deletePurchase={deletePurchase} />
+            
+                {/*<Example />*/}
+                <LastPurchases key={oldPurchases.id} addPurchases={addPurchases} generalExpenses={generalExpenses} oldPurchases={oldPurchases} deletePurchase={deletePurchase} />
                 
         </div>
     )
