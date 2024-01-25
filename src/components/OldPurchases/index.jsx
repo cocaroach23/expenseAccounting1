@@ -3,7 +3,7 @@ import { format } from "date-fns";
 import uuid4 from 'uuid4';
 import LastPurchases from '../LastPurchases';
 import { ru } from 'date-fns/locale'
-import { PieChart } from '../PieChart';
+import Example from 'components/Example';
 
 
 const OldPurchases =  () => {
@@ -51,7 +51,7 @@ const OldPurchases =  () => {
     return(
         <div>
             
-                {/*<Example />*/}
+                <Example />
                 <LastPurchases key={oldPurchases.id} addPurchases={addPurchases} generalExpenses={generalExpenses} oldPurchases={oldPurchases} deletePurchase={deletePurchase} />
                 
         </div>
