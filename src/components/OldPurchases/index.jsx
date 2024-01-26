@@ -51,7 +51,7 @@ const OldPurchases =  () => {
     return(
         <div>
             
-                <Example />
+                <Example oldPurchases={oldPurchases} />
                 <LastPurchases key={oldPurchases.id} addPurchases={addPurchases} generalExpenses={generalExpenses} oldPurchases={oldPurchases} deletePurchase={deletePurchase} />
                 
         </div>

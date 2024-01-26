@@ -1,6 +1,9 @@
 import React, { PureComponent } from 'react';
 import { PieChart, Pie, Sector, Cell, ResponsiveContainer } from 'recharts';
 import FormForAddNewPurchase from 'components/FormForAddNewPurchase';
+import oldPurchases from 'components/OldPurchases';
+
+const Example = ({oldPurchases}) => {
 
 const data = [
   { name: 'Group A', value: 400 },
@@ -24,15 +27,15 @@ const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, per
   );
 };
 
-export default class Example extends PureComponent {
-  static demoUrl = 'https://codesandbox.io/s/pie-chart-with-customized-label-dlhhj';
 
-  render() {
+ 
+
+  
     return (
       <ResponsiveContainer width="100%" height="100%">
         <PieChart width={400} height={400}>
           <Pie
-            FormForAddNewPurchase={FormForAddNewPurchase}
+            oldPurchases={oldPurchases}
             cx="50%"
             cy="50%"
             labelLine={false}
@@ -41,7 +44,7 @@ export default class Example extends PureComponent {
             fill="#8884d8"
             dataKey="value"
           >
-            {FormForAddNewPurchase.map((entry, index) => (
+            {data.map((entry, index) => (
               <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
             ))}
           </Pie>
@@ -49,7 +52,11 @@ export default class Example extends PureComponent {
       </ResponsiveContainer>
     );
   }
-}
+
+
+
+
+export default Example
 
 
 
