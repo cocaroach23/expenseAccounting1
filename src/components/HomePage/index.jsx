@@ -1,14 +1,9 @@
-import { useState } from 'react';
-import React from "react"
+const HomePage = ({ generalExpenses }) => {
+  return (
+    <>
+      <div className="pt-24 text-center text-5xl">Добро пожаловать!</div>
+    </>
+  );
+};
 
-const HomePage = ( { generalExpenses } ) =>{
-
-    return (
-        <div>
-        <div className="pt-24 text-center text-5xl">Добро пожаловать!</div>
-        
-        </div>
-    )
-}
-
-export default HomePage
+export default HomePage;

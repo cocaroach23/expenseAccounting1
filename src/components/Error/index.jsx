@@ -1,20 +1,16 @@
-import { useState, Fragment } from 'react'
-import { Dialog, Transition } from '@headlessui/react'
-import Button from 'components/Button'
+import { useState, Fragment } from "react";
+import { Dialog, Transition } from "@headlessui/react";
+import Button from "components/Button";
 
 const Error = () => {
-
-    let [isOpen, setIsOpen] = useState(true)
+  let [isOpen, setIsOpen] = useState(true);
 
   function closeModal() {
-    setIsOpen(false)
+    setIsOpen(false);
   }
 
-  
-    return(
-        <>
-            
-
+  return (
+    <>
       <Transition appear show={isOpen} as={Fragment}>
         <Dialog as="div" className="relative z-10" onClose={closeModal}>
           <Transition.Child
@@ -54,11 +50,7 @@ const Error = () => {
                   </div>
 
                   <div className="mt-4">
-                    <Button
-                     
-                     handleClick={closeModal} title={"Ok"}
-                    />
-                     
+                    <Button handleClick={closeModal} title={"Ok"} />
                   </div>
                 </Dialog.Panel>
               </Transition.Child>
@@ -66,8 +58,8 @@ const Error = () => {
           </div>
         </Dialog>
       </Transition>
-        </>
-    )
-}
+    </>
+  );
+};
 
-export default Error
+export default Error;
